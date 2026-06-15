@@ -1,0 +1,77 @@
+body{
+background:#f5f7fa;
+font-family:'Segoe UI',sans-serif;
+}
+
+.custom-navbar{
+background:linear-gradient(
+135deg,
+#ff6b35,
+#ff8c42
+);
+}
+
+.hero-section{
+background:white;
+padding:50px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.hero-image{
+max-width:300px;
+}
+
+.dashboard-card{
+background:white;
+border-radius:20px;
+padding:30px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.dashboard-card:hover{
+transform:translateY(-8px);
+}
+
+.card-icon{
+font-size:3rem;
+color:#28a745;
+margin-bottom:15px;
+}
+
+.dashboard-card h3{
+font-weight:700;
+color:#ff6b35;
+}
+
+.dashboard-card p{
+color:#666;
+}
+.form-container{
+    background:white;
+    max-width:700px;
+    margin:auto;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.form-control,
+.form-select{
+    border-radius:12px;
+    padding:12px;
+}
+
+.form-control:focus,
+.form-select:focus{
+    box-shadow:0 0 0 .25rem rgba(255,107,53,.25);
+    border-color:#ff6b35;
+}
+
+.btn{
+    border-radius:12px;
+    padding:12px;
+    font-weight:600;
+}

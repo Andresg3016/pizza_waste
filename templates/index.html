@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+
+<div class="hero-section">
+
+<div class="row align-items-center">
+
+    <div class="col-md-6">
+
+        <h1 class="display-4 fw-bold">
+            Reduce el desperdicio de ingredientes
+        </h1>
+
+        <p class="lead mt-3">
+            Pizza Waste ayuda a identificar pérdidas,
+            controlar ingredientes desperdiciados y
+            mejorar la rentabilidad de tu pizzería.
+        </p>
+
+        <a href="/registrar" class="btn btn-success btn-lg mt-3">
+            Registrar Desperdicio
+        </a>
+
+    </div>
+
+    <div class="col-md-6 text-center">
+
+        <img
+            src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png"
+            class="img-fluid hero-image"
+            alt="Pizza">
+
+    </div>
+
+</div>
+
+</div>
+
+<hr class="my-5">
+
+<div class="row g-4">
+
+
+<div class="col-md-4">
+
+    <div class="dashboard-card">
+
+        <i class="bi bi-trash3-fill card-icon"></i>
+
+        <h3>{{ total_desperdicios }}</h3>
+
+        <p>Registros Totales</p>
+
+    </div>
+
+</div>
+
+<div class="col-md-4">
+
+    <div class="dashboard-card">
+
+        <i class="bi bi-cash-stack card-icon"></i>
+
+        <h3>${{ total_perdidas }}</h3>
+
+        <p>Pérdidas Acumuladas</p>
+
+    </div>
+
+</div>
+
+<div class="col-md-4">
+
+    <div class="dashboard-card">
+
+        <i class="bi bi-pie-chart-fill card-icon"></i>
+
+        <h3>{{ ingrediente_top }}</h3>
+
+        <p>Ingrediente Más Desperdiciado</p>
+
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrar Desperdicio{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+<div class="text-center mb-4">
+    <h2>🍕 Registrar Desperdicio</h2>
+    <p class="text-muted">
+        Registra ingredientes desperdiciados para llevar control de pérdidas.
+    </p>
+</div>
+
+<form action="/registrar" method="POST">
+
+    <div class="mb-3">
+        <label class="form-label">Ingrediente</label>
+
+        <input
+            type="text"
+            name="ingrediente"
+            class="form-control"
+            placeholder="Ej: Queso mozzarella"
+            required>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="mb-3">
+                <label class="form-label">Cantidad</label>
+
+                <input
+                    type="number"
+                    step="0.01"
+                    name="cantidad"
+                    class="form-control"
+                    placeholder="0.00"
+                    required>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="mb-3">
+                <label class="form-label">Unidad</label>
+
+                <select name="unidad" class="form-select">
+
+                    <option value="kg">Kilogramos</option>
+                    <option value="g">Gramos</option>
+                    <option value="unidades">Unidades</option>
+                    <option value="litros">Litros</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Motivo del desperdicio
+        </label>
+
+        <textarea
+            name="motivo"
+            rows="4"
+            class="form-control"
+            placeholder="Describe qué ocurrió..."
+            required></textarea>
+
+    </div>
+
+    <div class="mb-4">
+
+        <label class="form-label">
+            Costo perdido ($)
+        </label>
+
+        <input
+            type="number"
+            step="0.01"
+            name="costo_perdido"
+            class="form-control"
+            placeholder="0.00">
+
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">
+
+        <i class="bi bi-save"></i>
+        Guardar Registro
+
+    </button>
+
+</form>
+
+</div>
+
+{% endblock %}

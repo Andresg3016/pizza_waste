@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Registro{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+<div class="text-center mb-4">
+    <h2>✏️ Editar Registro</h2>
+    <p class="text-muted">
+        Actualiza la información del desperdicio registrado.
+    </p>
+</div>
+
+<form action="/editar/{{ desperdicio.id }}" method="POST">
+
+    <div class="mb-3">
+
+        <label class="form-label">Ingrediente</label>
+
+        <input
+            type="text"
+            name="ingrediente"
+            class="form-control"
+            value="{{ desperdicio.ingrediente }}"
+            required>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="mb-3">
+
+                <label class="form-label">Cantidad</label>
+
+                <input
+                    type="number"
+                    step="0.01"
+                    name="cantidad"
+                    class="form-control"
+                    value="{{ desperdicio.cantidad }}"
+                    required>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="mb-3">
+
+                <label class="form-label">Unidad</label>
+
+                <select name="unidad" class="form-select">
+
+                    <option value="kg" {% if desperdicio.unidad == 'kg' %}selected{% endif %}>Kilogramos</option>
+
+                    <option value="g" {% if desperdicio.unidad == 'g' %}selected{% endif %}>Gramos</option>
+
+                    <option value="unidades" {% if desperdicio.unidad == 'unidades' %}selected{% endif %}>Unidades</option>
+
+                    <option value="litros" {% if desperdicio.unidad == 'litros' %}selected{% endif %}>Litros</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label class="form-label">
+            Motivo
+        </label>
+
+        <textarea
+            name="motivo"
+            rows="4"
+            class="form-control"
+            required>{{ desperdicio.motivo }}</textarea>
+
+    </div>
+
+    <div class="mb-4">
+
+        <label class="form-label">
+            Costo perdido ($)
+        </label>
+
+        <input
+            type="number"
+            step="0.01"
+            name="costo_perdido"
+            class="form-control"
+            value="{{ desperdicio.costo_perdido }}">
+
+    </div>
+
+    <button type="submit" class="btn btn-warning w-100">
+
+        <i class="bi bi-pencil-square"></i>
+        Actualizar Registro
+
+    </button>
+
+</form>
+
+</div>
+
+{% endblock %}
